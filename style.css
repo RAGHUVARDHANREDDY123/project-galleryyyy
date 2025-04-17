@@ -1,22 +1,55 @@
+/* Reset body margin and padding */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* Style for each task */
 .task {
-  width: 100vw;
-  height: 100vh; /* full screen height */
+  width: 100vw;         /* Full width of viewport */
+  height: 100vh;        /* Full height of viewport */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #f0f0f0;
-  border-bottom: 2px solid #ccc;
+  justify-content: center; /* Center content vertically */
+  align-items: center;     /* Center content horizontally */
+  background: #f0f0f0;     /* Light background color */
+  border-bottom: 2px solid #ccc; /* Border between tasks */
   box-sizing: border-box;
   padding: 2rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
+/* Change background color for even-numbered tasks */
 .task:nth-child(even) {
   background: #e0e0e0;
+}
+
+/* Styling for the heading (task name) */
+.task h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: #333;
+}
+
+/* Styling for the task description */
+.task p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin-top: 1rem;
+}
+
+/* Ensure that tasks are responsive and readable on mobile */
+@media (max-width: 768px) {
+  .task h1 {
+    font-size: 2rem;
+  }
+
+  .task p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
 }
